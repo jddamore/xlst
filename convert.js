@@ -12,7 +12,10 @@ const sef = saxon.compile(doc);
 
 const result = saxon.transform({
   stylesheetInternal: sef,
-  sourceText: env.readFile('bates.xml')
+  sourceText: env.readFile('bates.xml'),
+  stylesheetParams: {
+    "section-order": ["11450-4", "8716-3"] 
+ }
 });
 
 let transformedXmlStr = saxon.serialize(result.principalResult);
