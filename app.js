@@ -45,7 +45,7 @@ app.post(['/submit'], (req, res) => {
     res.writeHead(200, {'Content-Type': 'text/html'});
     res.write(transformedXmlStr);
     res.end();
-  });
+  }).catch(err=>{console.log(err)});
     //res.write('<!doctype html><html lang="en"><body>Hello World</body>');
   // let transformedXmlStr = saxon.serialize(result.principalResult);
 });
