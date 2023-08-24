@@ -32,6 +32,7 @@ app.post(['/submit'], (req, res) => {
   if (req.body.first !== 'Pick the First Section') {
     sectionOrder.push(req.body.first);
   }
+  //sectionOrder = ["11450-4", "8716-3"]
   console.log(sectionOrder);
   let output = saxon.transform({
     stylesheetInternal: sef,
