@@ -33,11 +33,9 @@ app.get(['/favicon.ico'], (req, res) => {
 
 app.post(['/submit'], (req, res) => {
   console.log('received post');
-  let sectionOrder = [];
-  if (req.body.first !== 'Pick the First Section') {
-    sectionOrder.push(req.body.first);
+  if (req.body.first) {
+    sectionOrder = req.body.first;
   }
-  //sectionOrder = ["11450-4", "8716-3"]
   console.log(sectionOrder);
   let output = saxon.transform({
     stylesheetInternal: sef,

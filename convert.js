@@ -15,7 +15,7 @@ const result = saxon.transform({
   stylesheetInternal: sef,
   sourceText: env.readFile('bates.xml'),
   stylesheetParams: {
-    "section-order": ["11450-4", "8716-3"] 
+    "section-order": "11450-4,8716-3" 
  }
 });
 
