@@ -6,7 +6,12 @@ const env = saxon.getPlatform();
 const doc = env.parseXmlFromString(env.readFile('./CDA.xsl'));
 // hack: avoid error "Required cardinality of value of parameter $static-base-uri is exactly one; supplied value is empty"
 // doc._saxonBaseUri = "C:/Users/JohnD'Amore/Source/Repos/xlst/";
-doc._saxonBaseUri = __dirname + '/';
+if (process.platform !== 'win32') {
+  doc._saxonBaseUri = 'file:///' + __dirname + '/';
+}
+else {
+  doc._saxonBaseUri = __dirname + '/';
+}
 
 const sef = saxon.compile(doc);
 
