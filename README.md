@@ -4,6 +4,9 @@ This repository uses a node module (saxon-js) to transform a C-CDA document into
 
 Specifically this web interface demonstrates the re-ordering possible of C-CDA document sections. 
 
+To install dependencies (once you download and install nodejs: https://nodejs.org/en/download/package-manager)
+``` npm i ```
+
 To launch website locally:
 ```node app.js```
 
